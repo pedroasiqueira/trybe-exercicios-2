@@ -9,9 +9,13 @@ class App extends Component {
   constructor() {
     super()
 
-    this.clique2 = this.clique2.bind(this)
+    // this.clique2 = this.clique2.bind(this)
+    this.numeroCliques = this.numeroCliques.bind(this)
+    this.state = {
+      numeroDeCliques: 0
+    }
 
-    console.log('teste');
+    
   }
   clique1() {
     //O this não vai aparecer no navegador porque eu não coloquei essa função dentro do constructor e abaixo do super.
@@ -28,6 +32,9 @@ class App extends Component {
     console.log(this)
     console.log('Mesma coisa 3')
 }
+  numeroCliques() {
+
+  }
 
   render() {
     // console.log(this)
