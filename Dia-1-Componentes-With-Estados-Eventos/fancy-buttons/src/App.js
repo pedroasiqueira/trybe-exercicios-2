@@ -19,10 +19,11 @@ class App extends Component {
 }
 
   render() {
-    console.log(this)
+    // console.log(this)
+    const { numeroDeCliques } = this.state
     return (
       
-        <button onClick={this.clique1}>Clique para aumentar a contagem de cliques: "{this.state.numeroDeCliques}"</button>
+        <button onClick={this.clique1}>Clique para aumentar a contagem de cliques: "{numeroDeCliques}"</button>
       
     )
   }
