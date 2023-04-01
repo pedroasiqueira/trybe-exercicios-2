@@ -9,13 +9,9 @@ class App extends Component {
   constructor() {
     super()
 
-    // this.clique2 = this.clique2.bind(this)
-    this.numeroCliques = this.numeroCliques.bind(this)
-    this.state = {
-      numeroDeCliques: 0
-    }
+    this.clique2 = this.clique2.bind(this)
 
-    
+    console.log('teste');
   }
   clique1() {
     //O this não vai aparecer no navegador porque eu não coloquei essa função dentro do constructor e abaixo do super.
@@ -28,13 +24,10 @@ class App extends Component {
     console.log('Igual ao anterior, só muda o texto 2')
   }
   clique3 = () => {
-    // O this vai aparecer porque essa é uma arrow function. E não precisa colocar dentro do constructor.
+    // O this vai aparecer porque essa é uma arrow function. E não precisa colocar dentro do constructor
     console.log(this)
     console.log('Mesma coisa 3')
 }
-  numeroCliques() {
-
-  }
 
   render() {
     // console.log(this)
