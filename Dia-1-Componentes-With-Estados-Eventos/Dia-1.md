@@ -36,10 +36,20 @@ Cada componente guarda o seu conjunto de informações
 
 ---
 
+## Eventos no React
 <details>
-  <summary><strong>Eventos no React</strong></summary><br />
+  <summary><strong>THIS</strong></summary><br />
+
+  * É um objeto que o JS cria e entrega para nós.
+Representa aquela class/componente com tudo que eles tem.
+Dentro do THIS tem a props
+Assunto anterior acessavamos somente o this.props
+  
+</details>
+
+<details>
+  <summary><strong>Constructor</strong></summary><br />
 
   * 
-  
   
 </details>

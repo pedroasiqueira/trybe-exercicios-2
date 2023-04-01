@@ -1,0 +1,1 @@
+Vai ser melhor usar arrow function para não ter que digitar mais dentro do constructor? Ou usando o arrow function vai ter uma restrição no futuro e talvez seja melhor usar a função normal para ter que colocar dentro do constructor a nossa função?
