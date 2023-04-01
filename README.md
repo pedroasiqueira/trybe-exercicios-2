@@ -1,2 +1,1 @@
-# trybe-exercicios-2
-Novo repositório de exercícios para a trybe
+# Componentes com Estados, Evenetos e Fomulários com React
