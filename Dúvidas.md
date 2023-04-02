@@ -2,3 +2,4 @@ Vai ser melhor usar arrow function para não ter que digitar mais dentro do cons
 
 
 Fazer outro botão que some de 5 em 5
+Criar um componente Botão, que eu possa reutiliza-lo e fazer vários botões facilmente
