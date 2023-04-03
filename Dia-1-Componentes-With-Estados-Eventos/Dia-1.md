@@ -32,6 +32,9 @@ Um não enxerga o estado do outro
 E se tiver um componente pai, ele vai ter o estado dele e só. Um componente **NUNCA** enxerga o componente de outro componente
 Cada componente guarda o seu conjunto de informações
 
+O conceito é: **state, ou estado do componente**, deve servir para ***guardar valores do Componente que mudam com o uso dele***.
+As **props** são ***valores fixos*** que um componente ***recebe e não altera.***
+
 </details>
 
 ---

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import './App.css';
 
 
 class App extends Component {
@@ -36,21 +35,27 @@ class App extends Component {
     }))
   }
 
+  getButtonColor(num) {
+    return num % 2 === 0 ? 'green' : 'white';
+  }
+
   render() {
     // console.log(this)
-    const { numeroDeCliques } = this.state
-    const { numeroDeCliques5 } = this.state
-    const { numeroDeCliques10 } = this.state
+    const { numeroDeCliques, numeroDeCliques5, numeroDeCliques10 } = this.state
+    const { getButtonColor } = this
+    const numCliq1 = getButtonColor(numeroDeCliques);
+    const numCliq5 = getButtonColor(numeroDeCliques5);
+    const numCliq10 = getButtonColor(numeroDeCliques10);
     return (
       <div>
         <button onClick={this.clique1}>Clique para aumentar de 1 em 1</button>
-        <p>{numeroDeCliques}</p>
+        <p style={ {backgroundColor: numCliq1} }>{numeroDeCliques}</p>
 
         <button onClick={this.clique5}>Clique para aumentar de 5 em 5</button>
-        <p>{numeroDeCliques5}</p>
+        <p style={ {backgroundColor: numCliq5} }>{numeroDeCliques5}</p>
 
         <button onClick={this.clique10}>Clique para aumentar de 10 e 10</button>
-        <p>{numeroDeCliques10}</p>
+        <p style={ { backgroundColor: numCliq10 } }>{numeroDeCliques10}</p>
       </div>
     )
   }
