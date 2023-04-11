@@ -56,6 +56,12 @@ Assunto anterior acessavamos somente o this.props
 <details>
   <summary><strong>Constructor</strong></summary><br />
 
-  * 
+  * Roda antes de todo mundo
+
+  * precisa ter o super para executar a lógica interna do React
+
+  * this.state precisa ser um objeto `this.state = {}`
+
+  * para fazer alterações no estado, usar `this.setState()`
   
 </details>
