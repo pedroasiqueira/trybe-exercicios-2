@@ -1,38 +1,54 @@
 import React from 'react';
 
 class DadJoke extends React.Component {
-  constructor() {
-    super();
-
-    this.saveJoke = this.saveJoke.bind(this);
-
-    this.state = {
+  
+    state = {
       jokeObj: undefined,
       loading: true,
       storedJokes: [],
     }
-  }
 
   async fetchJoke() {
-    const requestHeaders = { headers: { Accept: 'application/json' } }
-    const requestReturn = await fetch('https://icanhazdadjoke.com/', requestHeaders)
-    const requestObject = await requestReturn.json();
-    this.setState({
-      jokeObj: requestObject,
-    })
+    this.setState(
+      { loading: true }, //Primeiro parametro da setState()!
+      async () => {
+      const requestHeaders = { headers: { Accept: 'application/json' } }
+      const requestReturn = await fetch('https://icanhazdadjoke.com/', requestHeaders)
+      const requestObject = await requestReturn.json();
+      this.setState({
+        loading: false,
+        jokeObj: requestObject,
+      })
+  })
+    
   }
 
-  componentDidMount() {
+  componentDidMount = () => {
     this.fetchJoke();
   }
 
-  saveJoke() {
-    // Esse método será responsável por salvar a piada no array de piadas storedJokes!!
+  saveJoke = () => {
+    this.setState(({ jokeObj, storedJokes }) => ({
+      storedJokes: [...storedJokes, jokeObj]
+    }))
+    // Salvando a piada no array de piadas existestes
+    this.fetchJoke()
 
   }
 
+  renderJokeElement = () => {
+    return (
+      <div>
+        <p>{this.state.jokeObj.joke}</p>
+        <button type='button' onClick={this.saveJoke}>
+          Salvar Piada!
+        </button>
+      </div>
+    )
+  }
+
   render() {
-    const { storedJokes } = this.state;
+    const { storedJokes, jokeObj, loading } = this.state;
     const loadingElement = <span>Loading...</span>;
 
     return (
@@ -45,10 +61,16 @@ class DadJoke extends React.Component {
         /*
         Aqui vamos construir nossa lógica com uma renderização condicional
         do nosso componente Joke, a ideia é renderizar um loading enquanto
-        esperamos a nossa requisição de piadas finalizar.
+        esperamos a nossa requisição de piadas finalizar.*/
 
-        <p>RENDERIZAÇÃO CONDICIONAL</p>
-        */
+        <p>
+          {
+          loading ? loadingElement : this.renderJokeElement()
+          // jokeObj ? this.renderJokeElement() : loadingElement
+          // Esse if de cima é "mesma coisa" desse debaixo
+          // jokeObj === undefined ? loadingElement : jokeObj.joke
+          }
+          </p>
       }
 
       </div>
