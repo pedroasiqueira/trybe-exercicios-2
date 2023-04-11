@@ -1,11 +1,12 @@
-import Counter from './Counter';
+import React, { Component } from 'react';
+import RickAndMorty from './RickAndMorty';
 
-function App() {
-  return (
-    <div>
-      <Counter />
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+     <RickAndMorty />
+    );
+  }
 }
 
 export default App;
