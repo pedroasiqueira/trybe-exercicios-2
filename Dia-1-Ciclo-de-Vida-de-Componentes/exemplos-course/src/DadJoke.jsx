@@ -1,4 +1,5 @@
 import React from 'react';
+import Joke from './Joke';
 
 class DadJoke extends React.Component {
   
@@ -36,16 +37,6 @@ class DadJoke extends React.Component {
 
   }
 
-  renderJokeElement = () => {
-    return (
-      <div>
-        <p>{this.state.jokeObj.joke}</p>
-        <button type='button' onClick={this.saveJoke}>
-          Salvar Piada!
-        </button>
-      </div>
-    )
-  }
 
   render() {
     const { storedJokes, jokeObj, loading } = this.state;
@@ -65,7 +56,9 @@ class DadJoke extends React.Component {
 
         <p>
           {
-          loading ? loadingElement : this.renderJokeElement()
+          loading
+            ? loadingElement
+            : <Joke jokeObj={jokeObj} saveJoke={this.saveJoke} />
           // jokeObj ? this.renderJokeElement() : loadingElement
           // Esse if de cima é "mesma coisa" desse debaixo
           // jokeObj === undefined ? loadingElement : jokeObj.joke
