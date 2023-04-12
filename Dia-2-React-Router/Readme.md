@@ -111,6 +111,11 @@ Ex: a pessoa só pode acessar informações sensíveis (tipo conta bancária) se
   </Switch>
 ```
 
+`coringa *` usado para mostrar a msg 404
+```javascript
+<Route path='*' component={NotFound} />
+```
+
 
 
 
