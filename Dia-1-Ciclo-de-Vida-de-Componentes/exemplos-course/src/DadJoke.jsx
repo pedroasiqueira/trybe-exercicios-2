@@ -9,7 +9,7 @@ class DadJoke extends React.Component {
       storedJokes: [],
     }
 
-  async fetchJoke() {
+  fetchJoke = async () => {
     this.setState(
       { loading: true }, //Primeiro parametro da setState()!
       async () => {
@@ -32,7 +32,7 @@ class DadJoke extends React.Component {
     this.setState(({ jokeObj, storedJokes }) => ({
       storedJokes: [...storedJokes, jokeObj]
     }))
-    // Salvando a piada no array de piadas existestes
+    // Salvando a piada no array de piadas existentes
     this.fetchJoke()
 
   }
