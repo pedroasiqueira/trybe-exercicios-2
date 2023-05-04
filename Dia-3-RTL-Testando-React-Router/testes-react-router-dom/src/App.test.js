@@ -29,7 +29,7 @@ describe('teste da aplicação toda', () => {
   
   });
 
-  it('deve testar um caminho não existente e a renderização do Not Found', () => {
+  it.only('deve testar um caminho não existente e a renderização do Not Found', () => {
     const { history } = renderWithRouter(<App />);
     act(() => {
       history.push('/pagina/que-nao-existe/');
@@ -41,7 +41,7 @@ describe('teste da aplicação toda', () => {
 
   });
 
-  it.only('deve renderizar o componente About (apenas componente)', () => {
+  it('deve renderizar o componente About (apenas componente)', () => {
     renderWithRouter(<About />);
   
     const aboutTitle = screen.getByRole('heading',
