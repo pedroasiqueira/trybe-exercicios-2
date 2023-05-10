@@ -7,7 +7,10 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <Switch>
         <Route exact path="/" component={ Home } />
+
+        </Switch>
       </div>
     )
   }
