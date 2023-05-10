@@ -5,6 +5,8 @@ import { actionCreator } from './redux/actions';
 
 class App extends React.Component {
   render() {
+    // estou acessando essas props graças ao mapStateToProps e connect lá debaixo.
+    // a chave 'countState' é a chave que eu dei o nome que eu quis dentro do mapStateToProps
     const { countState, dispatch } = this.props
     return (
       <div>
