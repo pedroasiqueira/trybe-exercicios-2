@@ -6,6 +6,7 @@ const INITIAL_STATE = {
 const counterReducer = (state = INITIAL_STATE, action) => {
 
   switch (action.type) {
+    // cria um novo state a partir dos dados recebidos pela Action
     case "INCREMENT_COUNTER":
       return {
         ...state,

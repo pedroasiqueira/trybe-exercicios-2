@@ -17,8 +17,10 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  countState: state.count
+// Objetivo dessa função é criar propriedades que irão receber os valores que estão no ESTADO GLOBAL no momento
+const mapStateToProps = (globalState) => ({
+  countState: globalState.count
+  // O globalState está sendo acessado apenas dessa forma porque não criei o rootReducer. Se eu tivesse criado, teria que por o globalState.NomeDoReducer.count
 })
 
 export default connect(mapStateToProps)(App);
