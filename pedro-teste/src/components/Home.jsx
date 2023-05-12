@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { userEmailAction } from '../redux/actions';
+import { connect } from 'react-redux';
 
 class Home extends Component {
   state = {
@@ -32,7 +34,9 @@ class Home extends Component {
 
   onClickButton = () => {
     // Tenho que colocar aqui o estado global
-    const { history } = this.props;
+    const { history, dispatch } = this.props;
+    const { email } = this.state
+    dispatch(userEmailAction(email))
     history.push('/carteira');
   }
 
@@ -74,4 +78,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default connect()(Home);
