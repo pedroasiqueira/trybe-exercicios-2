@@ -1,17 +1,15 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import Header from "./Header";
+import WalletForm from "./WalletForm";
 
 class Wallet extends Component {
   render() {
-    const { email } = this.props;
     // essa prop email é a chave lá do mapStateToProps
     return (
       <div>
-        <header>
-          <p data-testid="email-field">{email}</p>
-          <p data-testid="total-field">0</p>
-          <p data-testid="header-currency-field">BRL</p>
-        </header>
+        <Header />
+        <WalletForm />
       </div>
     );
   }
